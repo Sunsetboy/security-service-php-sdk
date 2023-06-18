@@ -1,0 +1,25 @@
+{
+  "name": "sunsetboy/security-service-sdk",
+  "description": "Security service PHP SDK",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sunsetboy",
+      "email": "misha.sunsetboy@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "SecurityServiceClient\\" : "src/"
+    }
+  }
+}
