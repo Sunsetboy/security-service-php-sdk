@@ -10,6 +10,46 @@ class UserLoginDto
     private string $userAgent = '';
     private int $suspicionScore = 0;
 
+    private string $town = '';
+
+    private \DateTime $loginTs;
+
+    /**
+     * @return \DateTime
+     */
+    public function getLoginTs(): \DateTime
+    {
+        return $this->loginTs;
+    }
+
+    /**
+     * @param \DateTime $loginTs
+     * @return UserLoginDto
+     */
+    public function setLoginTs(\DateTime $loginTs): UserLoginDto
+    {
+        $this->loginTs = $loginTs;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTown(): string
+    {
+        return $this->town;
+    }
+
+    /**
+     * @param string $town
+     * @return UserLoginDto
+     */
+    public function setTown(string $town): UserLoginDto
+    {
+        $this->town = $town;
+        return $this;
+    }
+
     /**
      * @return int
      */
