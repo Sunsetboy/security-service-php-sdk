@@ -2,6 +2,10 @@
 
 ### Installation
 
+```
+composer require sunsetboy/security-service-sdk
+```
+
 ### Usage
 
 ```php
