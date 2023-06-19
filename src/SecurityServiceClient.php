@@ -29,11 +29,11 @@ class SecurityServiceClient
         return $this;
     }
 
-    public function __construct(string $apiKey, string $env = self::ENV_PROD)
+    public function __construct(string $apiKey)
     {
         $this->httpClient = new Client([
            // Base URI is used with relative requests
-           'base_uri' => $env === self::ENV_PROD ? 'https://100yuristov.com/security/' : 'http://localhost:8095/',
+           'base_uri' => 'https://100yuristov.com/security/',
            // You can set any number of default request options.
            'timeout' => 2,
        ]);
@@ -85,9 +85,8 @@ class SecurityServiceClient
         ]);
 
         $responseContent = $logResponse->getBody()->getContents();
-        $responseParsed = json_decode($responseContent, true);
 
-        return $this->createUserloginDtosFromJSON($responseParsed);
+        return $this->createUserloginDtosFromJSON($responseContent);
     }
 
     /**
@@ -98,7 +97,7 @@ class SecurityServiceClient
     private function createUserloginDtosFromJSON(string $userLoginJSONResponse): array
     {
         $responseParsed = json_decode($userLoginJSONResponse, true);
-        if ($responseParsed['error'] == false) {
+        if ($responseParsed['error'] == true) {
             $errorMessage = $responseParsed['message'] ?? "Unknown error";
             throw new SecurityServiceException($errorMessage);
         }
