@@ -49,7 +49,7 @@ class SecurityServiceClient
             'json' => [
                 "user_id" => $userId,
                 "ip" => $ip,
-                "login_ts" => (new \DateTime())->format('с'), // ISO 8601 date	2004-02-12T15:19:21+00:00
+                "login_ts" => (new \DateTime())->format('c'), // ISO 8601 date	2004-02-12T15:19:21+00:00
                 "user_agent" => $userAgent,
             ],
             'headers' => [
