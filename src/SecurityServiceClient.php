@@ -33,7 +33,7 @@ class SecurityServiceClient
     {
         $this->httpClient = new Client([
            // Base URI is used with relative requests
-           'base_uri' => 'https://100yuristov.com/security/',
+           'base_uri' => $_ENV['SECURITY_SERVICE_URL'] ?? 'https://100yuristov.com/security/',
            // You can set any number of default request options.
            'timeout' => 2,
        ]);
